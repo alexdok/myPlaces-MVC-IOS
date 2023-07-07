@@ -10,11 +10,7 @@ import Cosmos
 
 class PlacesTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var location: UILabel! {
-        didSet {
-            
-        }
-    }
+    @IBOutlet weak var location: UILabel! 
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var imageOfPlace: UIImageView! {
         didSet {
