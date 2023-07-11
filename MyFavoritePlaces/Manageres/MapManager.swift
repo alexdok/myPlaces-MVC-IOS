@@ -13,9 +13,11 @@ class MapManager {
     let locationManager = CLLocationManager()
     var textTime = ""
     var textPath = ""
-    private let regionInMeters: Double = 3000
-    private var placeCoordinate: CLLocationCoordinate2D?
-    private var directionsArray: [MKDirections] = []
+    let regionInMeters: Double = 3000
+    var placeCoordinate: CLLocationCoordinate2D?
+    var directionsArray: [MKDirections] = []
+    var showAlertClosure: ((_ title: String, _ message: String) -> Void)?
+
     
     func setupPlacemark(place: Place, mapView: MKMapView) {
         guard let location = place.location else { return }
@@ -143,7 +145,7 @@ class MapManager {
         return request
     }
     
-    func startTrackinguserLocation(for mapView: MKMapView, and location: CLLocation?, closure: (_ currentLocation:CLLocation) -> ()) {
+    func startTrackinguserLocation(for mapView: MKMapView, and location: CLLocation?, closure: (_ currentLocation:CLLocation) -> Void) {
         guard let location = location else { return }
         let center = getCenterLocation(for: mapView)
         guard center.distance(from: location) > 50 else { return }
@@ -167,6 +169,7 @@ class MapManager {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(okAction)
+        
         NotificationCenter.default.post(name: NSNotification.Name("ShowAlertNotification"), object: nil, userInfo: ["alertController": alertController])
     }
 }

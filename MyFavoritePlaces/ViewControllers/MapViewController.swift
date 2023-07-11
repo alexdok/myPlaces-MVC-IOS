@@ -97,7 +97,7 @@ class MapViewController: UIViewController {
             buttonGetDirections.isHidden = true
         }
         mapManager.checkLocationService(mapView: mapView, segueIdentifier: identifierSegue) {
-            mapManager.locationManager.delegate = self
+            self.mapManager.locationManager.delegate = self
         }
         if identifierSegue == Segues.showPlaceLocation.rawValue {
             mapManager.setupPlacemark(place: place, mapView: mapView)

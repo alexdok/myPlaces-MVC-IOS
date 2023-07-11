@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		90363D162A151C9200317D34 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90363D152A151C9200317D34 /* MapViewController.swift */; };
 		903BC3A82A52954200D501FD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BC3A72A52954200D501FD /* CustomButton.swift */; };
+		904A02092A5D2F43000C84CF /* MyFavoritePlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A02082A5D2F43000C84CF /* MyFavoritePlacesTests.swift */; };
 		90561F8029A4A3A200E0D69E /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */; };
 		908D4B89299FC6FA0048E952 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908D4B88299FC6FA0048E952 /* PlaceModel.swift */; };
 		9099C30B299F888700863677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099C30A299F888700863677 /* AppDelegate.swift */; };
@@ -26,12 +27,24 @@
 		AAFBC7633B611AD5D45D324E /* Pods_MyFavoritePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D975EFD125E912FDB41F24 /* Pods_MyFavoritePlaces.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		904A020A2A5D2F43000C84CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9099C2FF299F888700863677 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9099C306299F888700863677;
+			remoteInfo = MyFavoritePlaces;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		713C085354DC5182E6AC8FEE /* Pods-MyFavoritePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFavoritePlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyFavoritePlaces/Pods-MyFavoritePlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		71D975EFD125E912FDB41F24 /* Pods_MyFavoritePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFavoritePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E6F944DCC78ABBBA32C6A3 /* Pods-MyFavoritePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFavoritePlaces.release.xcconfig"; path = "Target Support Files/Pods-MyFavoritePlaces/Pods-MyFavoritePlaces.release.xcconfig"; sourceTree = "<group>"; };
 		90363D152A151C9200317D34 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = MyFavoritePlaces/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		903BC3A72A52954200D501FD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		904A02062A5D2F43000C84CF /* MyFavoritePlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFavoritePlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		904A02082A5D2F43000C84CF /* MyFavoritePlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoritePlacesTests.swift; sourceTree = "<group>"; };
 		90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		908D4B88299FC6FA0048E952 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		9099C307299F888700863677 /* MyFavoritePlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFavoritePlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +64,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		904A02032A5D2F43000C84CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9099C304299F888700863677 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,10 +91,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		904A02072A5D2F43000C84CF /* MyFavoritePlacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				904A02082A5D2F43000C84CF /* MyFavoritePlacesTests.swift */,
+			);
+			path = MyFavoritePlacesTests;
+			sourceTree = "<group>";
+		};
 		9099C2FE299F888700863677 = {
 			isa = PBXGroup;
 			children = (
 				9099C309299F888700863677 /* MyFavoritePlaces */,
+				904A02072A5D2F43000C84CF /* MyFavoritePlacesTests */,
 				9099C308299F888700863677 /* Products */,
 				19359E560C8744986751D21A /* Pods */,
 				DDAC16EB949C1DE5664B801A /* Frameworks */,
@@ -85,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9099C307299F888700863677 /* MyFavoritePlaces.app */,
+				904A02062A5D2F43000C84CF /* MyFavoritePlacesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +202,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		904A02052A5D2F43000C84CF /* MyFavoritePlacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 904A020E2A5D2F43000C84CF /* Build configuration list for PBXNativeTarget "MyFavoritePlacesTests" */;
+			buildPhases = (
+				904A02022A5D2F43000C84CF /* Sources */,
+				904A02032A5D2F43000C84CF /* Frameworks */,
+				904A02042A5D2F43000C84CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				904A020B2A5D2F43000C84CF /* PBXTargetDependency */,
+			);
+			name = MyFavoritePlacesTests;
+			productName = MyFavoritePlacesTests;
+			productReference = 904A02062A5D2F43000C84CF /* MyFavoritePlacesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9099C306299F888700863677 /* MyFavoritePlaces */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9099C31B299F888800863677 /* Build configuration list for PBXNativeTarget "MyFavoritePlaces" */;
@@ -198,9 +246,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					904A02052A5D2F43000C84CF = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 9099C306299F888700863677;
+					};
 					9099C306299F888700863677 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -220,11 +272,19 @@
 			projectRoot = "";
 			targets = (
 				9099C306299F888700863677 /* MyFavoritePlaces */,
+				904A02052A5D2F43000C84CF /* MyFavoritePlacesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		904A02042A5D2F43000C84CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9099C305299F888700863677 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +340,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		904A02022A5D2F43000C84CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				904A02092A5D2F43000C84CF /* MyFavoritePlacesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9099C303299F888700863677 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +370,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		904A020B2A5D2F43000C84CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9099C306299F888700863677 /* MyFavoritePlaces */;
+			targetProxy = 904A020A2A5D2F43000C84CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		9099C310299F888700863677 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -322,6 +398,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		904A020C2A5D2F43000C84CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X682UQSZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ganzitsky.MyFavoritePlacesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyFavoritePlaces.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyFavoritePlaces";
+			};
+			name = Debug;
+		};
+		904A020D2A5D2F43000C84CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4X682UQSZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ganzitsky.MyFavoritePlacesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyFavoritePlaces.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyFavoritePlaces";
+			};
+			name = Release;
+		};
 		9099C319299F888800863677 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -511,6 +631,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		904A020E2A5D2F43000C84CF /* Build configuration list for PBXNativeTarget "MyFavoritePlacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				904A020C2A5D2F43000C84CF /* Debug */,
+				904A020D2A5D2F43000C84CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9099C302299F888700863677 /* Build configuration list for PBXProject "MyFavoritePlaces" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
