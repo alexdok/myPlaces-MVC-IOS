@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  MyFavoritePlaces
-//
-//  Created by алексей ганзицкий on 17.02.2023.
-//
-
 import UIKit
 import RealmSwift
 
@@ -74,6 +67,7 @@ final class MainViewController: UIViewController {
         tableView.reloadData()
     }
     
+    // Действие, вызываемое при возврате из другого представления через unwind segue. Сохраняет новое место (если оно было добавлено) и обновляет таблицу.
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         newPlaceVC.savePlace()
