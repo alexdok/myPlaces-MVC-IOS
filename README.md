@@ -1,1 +1,0 @@
-# myPlaces-MVC-IOS
