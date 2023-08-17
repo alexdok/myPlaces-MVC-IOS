@@ -11,12 +11,11 @@ import RealmSwift
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return places.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PlacesTableViewCell else { return UITableViewCell()}
-//        let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
         let place = places[indexPath.row]
         cell.name.text = place.name
         cell.location.text = place.location
@@ -43,11 +42,12 @@ extension MainViewController: UITableViewDelegate {
     
     private func delAlertController(indexPath: IndexPath) {
         let confirmeAlertController = UIAlertController(title: nil, message: "are you shure DELETE this place", preferredStyle: .actionSheet)
+        
         let ok = UIAlertAction(title: "DELETE", style: .destructive) { _ in
-            
             self.places = self.mainViewModel.delPlace(indexPath: indexPath)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        
         let cancel = UIAlertAction(title: "cancel", style: .cancel)
         confirmeAlertController.addAction(ok)
         confirmeAlertController.addAction(cancel)
@@ -69,7 +69,6 @@ extension MainViewController: UISearchResultsUpdating {
     
     private func filterContentForSearchText(_ searchText: String) {
         places = mainViewModel.filterPlaces(filterText: searchText)
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.tableView.reloadData()
         }

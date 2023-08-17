@@ -17,17 +17,19 @@ class MainViewModel {
         data = dataProvider.provideCurrentPlaces(metod: metod, filter: filter)
         return data
     }
+    
     func fetchData(metod: Metods) -> [Place] {
         data = dataProvider.provideCurrentPlaces(metod: metod, filter: .date)
         return data
     }
+    
     func delPlace(indexPath: IndexPath) -> [Place] {
         data = dataProvider.removePlace(indexPath: indexPath)
         return data
     }
+    
     func filterPlaces(filterText: String) -> [Place] {
         data = dataProvider.filterPlaces(serchText: filterText)
         return data
     }
-    
 }
