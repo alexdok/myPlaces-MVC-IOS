@@ -25,7 +25,6 @@ final class MainViewController: UIViewController {
         setTableView()
         setSearchController()
     }
-    
 
     //MARK: - Navigation
     
@@ -61,7 +60,8 @@ final class MainViewController: UIViewController {
     }
     
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
-       sorted()
+        ascendingSorting = true
+        sorted()
     }
     
     private func sorted() {
