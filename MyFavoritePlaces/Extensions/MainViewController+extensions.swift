@@ -11,16 +11,13 @@ import RealmSwift
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if isFiltering {
-            return filteredPlaces.count
-        } else {
             return places.count
-        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PlacesTableViewCell else { return UITableViewCell()}
-        let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
+//        let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
+        let place = places[indexPath.row]
         cell.name.text = place.name
         cell.location.text = place.location
         cell.type.text = place.type
@@ -40,15 +37,15 @@ extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let place = places[indexPath.row]
-            delAlertController(place: place, indexPath: indexPath)
+            delAlertController(indexPath: indexPath)
         }
     }
     
-    private func delAlertController(place: Place, indexPath: IndexPath) {
+    private func delAlertController(indexPath: IndexPath) {
         let confirmeAlertController = UIAlertController(title: nil, message: "are you shure DELETE this place", preferredStyle: .actionSheet)
         let ok = UIAlertAction(title: "DELETE", style: .destructive) { _ in
-            StorageManager.delObject(place)
+            
+            self.places = self.mainViewModel.delPlace(indexPath: indexPath)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         let cancel = UIAlertAction(title: "cancel", style: .cancel)
@@ -61,11 +58,20 @@ extension MainViewController: UITableViewDelegate {
 extension MainViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text ?? "")
+        if searchController.searchBar.text == "" || searchController.searchBar.text == " "{
+            places = mainViewModel.fetchData(metod: .currentPlaces)
+            tableView.reloadData()
+            return
+        } else {
+            filterContentForSearchText(searchController.searchBar.text ?? "")
+        }
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        filteredPlaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText)
-        tableView.reloadData()
+        places = mainViewModel.filterPlaces(filterText: searchText)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.tableView.reloadData()
+        }
     }
 }

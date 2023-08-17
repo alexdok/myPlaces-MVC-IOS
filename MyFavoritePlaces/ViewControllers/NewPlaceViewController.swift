@@ -27,6 +27,7 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
+    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var placeType: UITextField!
     
     override func viewDidLoad() {
@@ -35,6 +36,7 @@ class NewPlaceViewController: UITableViewController {
         setupEditScreen()
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setCosmosView()
+        mapButton.dropShadow()
     }
     
     //MARK: navigation

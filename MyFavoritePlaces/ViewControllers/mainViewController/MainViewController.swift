@@ -4,8 +4,8 @@ import RealmSwift
 final class MainViewController: UIViewController {
     
     var searchController = UISearchController(searchResultsController: nil)
-    var places: Results<Place>!
-    var filteredPlaces: Results<Place>!
+    var places: [Place] = []
+    var mainViewModel = MainViewModel()
     var ascendingSorting = true
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
@@ -21,16 +21,18 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        places = realm.objects(Place.self)
+        places = mainViewModel.fetchData(metod: .currentPlaces)
         setTableView()
         setSearchController()
     }
+    
+
     //MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
+            let place = places[indexPath.row] 
             guard let newPlaceVC = segue.destination as? NewPlaceViewController else { return }
             newPlaceVC.currentPlace = place
         }
@@ -52,6 +54,10 @@ final class MainViewController: UIViewController {
     @IBAction func reversedSorting(_ sender: UIBarButtonItem) {
         ascendingSorting.toggle()
         sorted()
+        if !ascendingSorting {
+            places.reverse()
+            tableView.reloadData()
+        }
     }
     
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
@@ -60,9 +66,9 @@ final class MainViewController: UIViewController {
     
     private func sorted() {
         if segmentedControl.selectedSegmentIndex == 0 {
-            places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
+            places = mainViewModel.fetchData(metod: .filtredPlaces, filter: .date)
         } else {
-            places = places.sorted(byKeyPath: "name", ascending: ascendingSorting)
+            places = mainViewModel.fetchData(metod: .filtredPlaces, filter: .name)
         }
         tableView.reloadData()
     }
@@ -71,6 +77,7 @@ final class MainViewController: UIViewController {
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         newPlaceVC.savePlace()
+        sorted()
         tableView.reloadData()
     }
 }

@@ -7,4 +7,5 @@ target 'MyFavoritePlaces' do
 
   pod 'RealmSwift', '~>10'
   pod 'Cosmos', '~> 23.0'
+
 end

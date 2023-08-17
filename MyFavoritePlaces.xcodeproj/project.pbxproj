@@ -23,7 +23,11 @@
 		90B504952A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B504942A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift */; };
 		90B504972A2A28E800C7C5A7 /* MapViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B504962A2A28E800C7C5A7 /* MapViewController+extensions.swift */; };
 		90B504992A2A2C8800C7C5A7 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B504982A2A2C8800C7C5A7 /* MapManager.swift */; };
+		90C2E66E2A8B5F06005F5657 /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E66D2A8B5F06005F5657 /* RealmDataManager.swift */; };
+		90C2E6702A8B6485005F5657 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E66F2A8B6485005F5657 /* UIButton+extension.swift */; };
+		90C2E6722A8B679C005F5657 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C2E6712A8B679C005F5657 /* DataProvider.swift */; };
 		90CA04EC29B1F52E00A96762 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA04EB29B1F52E00A96762 /* StorageManager.swift */; };
+		90CF2F612A8A5CA50085C980 /* MainViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF2F602A8A5CA50085C980 /* MainViewControllerViewModel.swift */; };
 		AAFBC7633B611AD5D45D324E /* Pods_MyFavoritePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D975EFD125E912FDB41F24 /* Pods_MyFavoritePlaces.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +64,11 @@
 		90B504942A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewPlaceViewController+extensions.swift"; sourceTree = "<group>"; };
 		90B504962A2A28E800C7C5A7 /* MapViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+extensions.swift"; sourceTree = "<group>"; };
 		90B504982A2A2C8800C7C5A7 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		90C2E66D2A8B5F06005F5657 /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
+		90C2E66F2A8B6485005F5657 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
+		90C2E6712A8B679C005F5657 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		90CA04EB29B1F52E00A96762 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		90CF2F602A8A5CA50085C980 /* MainViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +143,10 @@
 		90A302082A2F63C400E12CA9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				90B504942A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift */,
 				90B504962A2A28E800C7C5A7 /* MapViewController+extensions.swift */,
 				903BC3A72A52954200D501FD /* CustomButton.swift */,
-				90B504942A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift */,
+				90C2E66F2A8B6485005F5657 /* UIButton+extension.swift */,
 				90B504922A2A248500C7C5A7 /* MainViewController+extensions.swift */,
 			);
 			path = Extensions;
@@ -146,7 +155,7 @@
 		90A302092A2F63DE00E12CA9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9099C30E299F888700863677 /* MainViewController.swift */,
+				90DDB7452A8E67B4000913A9 /* mainViewController */,
 				90363D152A151C9200317D34 /* MapViewController.swift */,
 				90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */,
 				9099C31E299F92BB00863677 /* PlacesTableViewCell.swift */,
@@ -165,6 +174,7 @@
 		90A3020B2A2F643D00E12CA9 /* Manageres */ = {
 			isa = PBXGroup;
 			children = (
+				90C2E66D2A8B5F06005F5657 /* RealmDataManager.swift */,
 				90CA04EB29B1F52E00A96762 /* StorageManager.swift */,
 				90B504982A2A2C8800C7C5A7 /* MapManager.swift */,
 			);
@@ -189,6 +199,16 @@
 				9099C310299F888700863677 /* Main.storyboard */,
 			);
 			path = InterfaceBilder;
+			sourceTree = "<group>";
+		};
+		90DDB7452A8E67B4000913A9 /* mainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9099C30E299F888700863677 /* MainViewController.swift */,
+				90CF2F602A8A5CA50085C980 /* MainViewControllerViewModel.swift */,
+				90C2E6712A8B679C005F5657 /* DataProvider.swift */,
+			);
+			path = mainViewController;
 			sourceTree = "<group>";
 		};
 		DDAC16EB949C1DE5664B801A /* Frameworks */ = {
@@ -228,7 +248,7 @@
 				9099C303299F888700863677 /* Sources */,
 				9099C304299F888700863677 /* Frameworks */,
 				9099C305299F888700863677 /* Resources */,
-				0CEEA35082FDD09BCFE0D371 /* [CP] Embed Pods Frameworks */,
+				AF33C08C41830CDF7B1210C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,7 +318,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CEEA35082FDD09BCFE0D371 /* [CP] Embed Pods Frameworks */ = {
+		AF33C08C41830CDF7B1210C4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -357,14 +377,18 @@
 				90B504972A2A28E800C7C5A7 /* MapViewController+extensions.swift in Sources */,
 				9099C30F299F888700863677 /* MainViewController.swift in Sources */,
 				90561F8029A4A3A200E0D69E /* NewPlaceViewController.swift in Sources */,
+				90C2E6702A8B6485005F5657 /* UIButton+extension.swift in Sources */,
 				9099C30B299F888700863677 /* AppDelegate.swift in Sources */,
 				90363D162A151C9200317D34 /* MapViewController.swift in Sources */,
 				90CA04EC29B1F52E00A96762 /* StorageManager.swift in Sources */,
 				908D4B89299FC6FA0048E952 /* PlaceModel.swift in Sources */,
 				90B504932A2A248500C7C5A7 /* MainViewController+extensions.swift in Sources */,
+				90CF2F612A8A5CA50085C980 /* MainViewControllerViewModel.swift in Sources */,
 				90B504992A2A2C8800C7C5A7 /* MapManager.swift in Sources */,
+				90C2E6722A8B679C005F5657 /* DataProvider.swift in Sources */,
 				9099C30D299F888700863677 /* SceneDelegate.swift in Sources */,
 				9099C31F299F92BB00863677 /* PlacesTableViewCell.swift in Sources */,
+				90C2E66E2A8B5F06005F5657 /* RealmDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

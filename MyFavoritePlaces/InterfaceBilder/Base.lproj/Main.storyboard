@@ -178,7 +178,7 @@
             <objects>
                 <tableViewController id="ANV-PY-Sll" customClass="NewPlaceViewController" customModule="MyFavoritePlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Da4-DY-bMD">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -201,8 +201,12 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="6nP-XN-0hH"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="jh1-Zi-d57"/>
                                                     </constraints>
+                                                    <color key="tintColor" red="0.092759154740000002" green="0.092759154740000002" blue="0.092759154740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <size key="titleShadowOffset" width="2" height="2"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="map" catalog="system" title=" "/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="map" catalog="system" title=" ">
+                                                        <backgroundConfiguration key="background"/>
+                                                    </buttonConfiguration>
                                                     <connections>
                                                         <segue destination="Oks-dp-wIU" kind="presentation" identifier="showPlaceLocation" id="KUV-Qs-HtY"/>
                                                     </connections>
@@ -407,6 +411,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cosmosRatingView" destination="WyE-7o-ke8" id="LUL-z4-jg2"/>
+                        <outlet property="mapButton" destination="eBF-6Y-R1P" id="wXP-cD-jfk"/>
                         <outlet property="placeImage" destination="YmB-m2-PSb" id="C9F-jh-qUU"/>
                         <outlet property="placeLocation" destination="LGn-SE-YoM" id="dln-P0-qTs"/>
                         <outlet property="placeName" destination="d81-pb-iTk" id="Ph3-X6-7AQ"/>
@@ -564,7 +569,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="cfv-nC-HaM"/>
-        <segue reference="lPw-PF-rel"/>
+        <segue reference="zhF-Mb-kkv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="addPicture" width="420" height="427"/>
