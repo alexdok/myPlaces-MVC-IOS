@@ -19,6 +19,8 @@
 		9099C314299F888800863677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9099C313299F888800863677 /* Assets.xcassets */; };
 		9099C317299F888800863677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9099C315299F888800863677 /* LaunchScreen.storyboard */; };
 		9099C31F299F92BB00863677 /* PlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9099C31E299F92BB00863677 /* PlacesTableViewCell.swift */; };
+		909FF8352A8F57FB00DEDA4A /* NewPlaceViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909FF8342A8F57FB00DEDA4A /* NewPlaceViewControllerViewModel.swift */; };
+		909FF8372A8F6D5400DEDA4A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909FF8362A8F6D5400DEDA4A /* AlertManager.swift */; };
 		90B504932A2A248500C7C5A7 /* MainViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B504922A2A248500C7C5A7 /* MainViewController+extensions.swift */; };
 		90B504952A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B504942A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift */; };
 		90B504972A2A28E800C7C5A7 /* MapViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B504962A2A28E800C7C5A7 /* MapViewController+extensions.swift */; };
@@ -60,6 +62,8 @@
 		9099C316299F888800863677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9099C318299F888800863677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9099C31E299F92BB00863677 /* PlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewCell.swift; sourceTree = "<group>"; };
+		909FF8342A8F57FB00DEDA4A /* NewPlaceViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewControllerViewModel.swift; sourceTree = "<group>"; };
+		909FF8362A8F6D5400DEDA4A /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		90B504922A2A248500C7C5A7 /* MainViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+extensions.swift"; sourceTree = "<group>"; };
 		90B504942A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewPlaceViewController+extensions.swift"; sourceTree = "<group>"; };
 		90B504962A2A28E800C7C5A7 /* MapViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+extensions.swift"; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				90DDB7452A8E67B4000913A9 /* mainViewController */,
 				90363D152A151C9200317D34 /* MapViewController.swift */,
 				90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */,
+				909FF8342A8F57FB00DEDA4A /* NewPlaceViewControllerViewModel.swift */,
 				9099C31E299F92BB00863677 /* PlacesTableViewCell.swift */,
 			);
 			path = ViewControllers;
@@ -177,6 +182,7 @@
 				90C2E66D2A8B5F06005F5657 /* RealmDataManager.swift */,
 				90CA04EB29B1F52E00A96762 /* StorageManager.swift */,
 				90B504982A2A2C8800C7C5A7 /* MapManager.swift */,
+				909FF8362A8F6D5400DEDA4A /* AlertManager.swift */,
 			);
 			path = Manageres;
 			sourceTree = "<group>";
@@ -382,8 +388,10 @@
 				90363D162A151C9200317D34 /* MapViewController.swift in Sources */,
 				90CA04EC29B1F52E00A96762 /* StorageManager.swift in Sources */,
 				908D4B89299FC6FA0048E952 /* PlaceModel.swift in Sources */,
+				909FF8372A8F6D5400DEDA4A /* AlertManager.swift in Sources */,
 				90B504932A2A248500C7C5A7 /* MainViewController+extensions.swift in Sources */,
 				90CF2F612A8A5CA50085C980 /* MainViewControllerViewModel.swift in Sources */,
+				909FF8352A8F57FB00DEDA4A /* NewPlaceViewControllerViewModel.swift in Sources */,
 				90B504992A2A2C8800C7C5A7 /* MapManager.swift in Sources */,
 				90C2E6722A8B679C005F5657 /* DataProvider.swift in Sources */,
 				9099C30D299F888700863677 /* SceneDelegate.swift in Sources */,
