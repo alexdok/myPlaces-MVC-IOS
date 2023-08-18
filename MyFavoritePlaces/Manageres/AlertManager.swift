@@ -9,28 +9,26 @@
 import UIKit
 
 protocol AlertPresentable {
-    func presentAlert()
+    func presentAlert(indexPath: IndexPath) -> Bool
 }
 
 extension AlertPresentable where Self: UIViewController {
-    func presentAlert() {
-        let actionSheet = UIAlertController(title: nil,
-                                            message: nil,
-                                            preferredStyle: .actionSheet)
-        let camera = UIAlertAction(title: "Camera", style: .default) { _ in
-            self.chooseImagePicker(source: .camera)
-        }
-        camera.setValue(cameraIcon, forKey: "image")
-        camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        let photo = UIAlertAction(title: "Gallery", style: .default) { _ in
-            self.chooseImagePicker(source: .photoLibrary)
-        }
-        photo.setValue(galleryIcon, forKey: "image")
-        photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        actionSheet.addAction(camera)
-        actionSheet.addAction(photo)
-        actionSheet.addAction(cancel)
-        present(actionSheet,animated: true)
+  
+    
+    func presentAlert(indexPath: IndexPath) -> Bool {
+        var okOrCcancel = false
+            let confirmeAlertController = UIAlertController(title: nil, message: "are you shure DELETE this place", preferredStyle: .actionSheet)
+            
+            let ok = UIAlertAction(title: "DELETE", style: .destructive) { _ in
+                okOrCcancel = true
+            }
+            
+            let cancel = UIAlertAction(title: "cancel", style: .cancel)
+        
+            confirmeAlertController.addAction(ok)
+            confirmeAlertController.addAction(cancel)
+            present(confirmeAlertController, animated: true)
+        return okOrCcancel
+        
     }
 }
