@@ -15,8 +15,7 @@ enum Segues: String {
 
 class NewPlaceViewController: UITableViewController {
     
-    let cameraIcon = #imageLiteral(resourceName: "photo")
-    let galleryIcon = #imageLiteral(resourceName: "gallery")
+    let alertBuilder = AlertBuilderImpl()
     var imageIsChanged = false
     var currentPlace: Place?
     var currentRating = 0.0
@@ -85,27 +84,6 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
-  private func createAlertController() {
-        let actionSheet = UIAlertController(title: nil,
-                                            message: nil,
-                                            preferredStyle: .actionSheet)
-        let camera = UIAlertAction(title: "Camera", style: .default) { _ in
-            self.chooseImagePicker(source: .camera)
-        }
-        camera.setValue(cameraIcon, forKey: "image")
-        camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        let photo = UIAlertAction(title: "Gallery", style: .default) { _ in
-            self.chooseImagePicker(source: .photoLibrary)
-        }
-        photo.setValue(galleryIcon, forKey: "image")
-        photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        actionSheet.addAction(camera)
-        actionSheet.addAction(photo)
-        actionSheet.addAction(cancel)
-        present(actionSheet,animated: true)
-    }
-    
     private func setupEditScreen() {
         if currentPlace != nil {
             setupNavigationBar()
@@ -120,6 +98,13 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    private func createAlertController() {
+        let imagePickerAlert = alertBuilder.createImagePickerAlert { [weak self] sourceType in
+            self?.chooseImagePicker(source: sourceType)
+        }
+        present(imagePickerAlert, animated: true, completion: nil)
+    }
+    
     private func setupNavigationBar() {
         if let topItem = navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -129,7 +114,7 @@ class NewPlaceViewController: UITableViewController {
         saveButton.isEnabled = true
     }
     
-//MARK: table View delegate
+    //MARK: table View delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             createAlertController()

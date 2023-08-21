@@ -10,13 +10,13 @@ import MapKit
 
 class MapManager {
     
+    let alertBuilder = AlertBuilderImpl()
     let locationManager = CLLocationManager()
     var textTime = ""
     var textPath = ""
     let regionInMeters: Double = 3000
     var placeCoordinate: CLLocationCoordinate2D?
     var directionsArray: [MKDirections] = []
-    var showAlertClosure: ((_ title: String, _ message: String) -> Void)?
 
     
     func setupPlacemark(place: Place, mapView: MKMapView) {
@@ -48,8 +48,8 @@ class MapManager {
             closure()
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.showAlert(title: "Your Location Services are Disabled",
-                               message: "To enable it go: Setting -> Privacy -> Location Services and turn on")
+                let alertModel = AlertModel(title: "Your Location Services are Disabled", message: "To enable it go: Setting -> Privacy -> Location Services and turn on")
+                self.alertBuilder.showInfoAlert(with: alertModel)
             }
         }
     }
@@ -60,14 +60,14 @@ class MapManager {
             locationManager.requestWhenInUseAuthorization()
         case .restricted:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.showAlert(title: "Your location is not Availeble",
-                               message: "To give permission Go to: Setting -> MyFavoritePlaces -> Location")
+                let alertModel = AlertModel(title: "Your Location Services are Disabled", message: "To enable it go: Setting -> Privacy -> Location Services and turn on")
+                self.alertBuilder.showInfoAlert(with: alertModel)
             }
             break
         case .denied:
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.showAlert(title: "Your location is not Availeble",
-                               message: "To give permission Go to: Setting -> MyFavoritePlaces -> Location")
+                let alertModel = AlertModel(title: "Your Location Services are Disabled", message: "To enable it go: Setting -> Privacy -> Location Services and turn on")
+                self.alertBuilder.showInfoAlert(with: alertModel)
             }
             break
         case .authorizedAlways:
@@ -93,11 +93,13 @@ class MapManager {
     
     func getDirections(mapView: MKMapView, previousLocation: (CLLocation) -> ()) {
         guard let location = locationManager.location?.coordinate else {
-            showAlert(title: "Error", message: "Current location is not found")
+            let alertModel = AlertModel(title: "Error", message: "Current location is not found")
+            alertBuilder.showInfoAlert(with: alertModel)
             return
         }
         guard let request = createDiractionsRequest(coordinate: location) else {
-            showAlert(title: "Error", message: "Destination is not found")
+            let alertModel = AlertModel(title: "Error", message: "Current location is not found")
+            alertBuilder.showInfoAlert(with: alertModel)
             return
         }
         locationManager.startUpdatingLocation()
@@ -110,7 +112,8 @@ class MapManager {
                 return
             }
             guard let response = response else {
-                self.showAlert(title: "ERROR", message: "Directions is not available")
+                let alertModel = AlertModel(title: "ERROR", message: "Directions is not available")
+                self.alertBuilder.showInfoAlert(with: alertModel)
                 return
             }
             for route in response.routes {
@@ -163,13 +166,5 @@ class MapManager {
         let latitude = mapView.centerCoordinate.latitude
         let longitude = mapView.centerCoordinate.longitude
         return CLLocation(latitude: latitude, longitude: longitude)
-    }
-    
-    func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(okAction)
-        
-        NotificationCenter.default.post(name: NSNotification.Name("ShowAlertNotification"), object: nil, userInfo: ["alertController": alertController])
     }
 }

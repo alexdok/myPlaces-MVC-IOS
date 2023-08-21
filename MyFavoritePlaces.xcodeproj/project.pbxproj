@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		901B79342A9399E600D77D94 /* AlertDeleteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B79332A9399E600D77D94 /* AlertDeleteBuilder.swift */; };
+		901B79342A9399E600D77D94 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B79332A9399E600D77D94 /* AlertBuilder.swift */; };
 		90363D162A151C9200317D34 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90363D152A151C9200317D34 /* MapViewController.swift */; };
 		903BC3A82A52954200D501FD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BC3A72A52954200D501FD /* CustomButton.swift */; };
 		904A02092A5D2F43000C84CF /* MyFavoritePlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904A02082A5D2F43000C84CF /* MyFavoritePlacesTests.swift */; };
@@ -46,7 +46,7 @@
 		713C085354DC5182E6AC8FEE /* Pods-MyFavoritePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFavoritePlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyFavoritePlaces/Pods-MyFavoritePlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		71D975EFD125E912FDB41F24 /* Pods_MyFavoritePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFavoritePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E6F944DCC78ABBBA32C6A3 /* Pods-MyFavoritePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFavoritePlaces.release.xcconfig"; path = "Target Support Files/Pods-MyFavoritePlaces/Pods-MyFavoritePlaces.release.xcconfig"; sourceTree = "<group>"; };
-		901B79332A9399E600D77D94 /* AlertDeleteBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDeleteBuilder.swift; sourceTree = "<group>"; };
+		901B79332A9399E600D77D94 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		90363D152A151C9200317D34 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = MyFavoritePlaces/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		903BC3A72A52954200D501FD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		904A02062A5D2F43000C84CF /* MyFavoritePlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFavoritePlacesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +157,7 @@
 		90A302092A2F63DE00E12CA9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				901B79332A9399E600D77D94 /* AlertDeleteBuilder.swift */,
+				901B79332A9399E600D77D94 /* AlertBuilder.swift */,
 				90DDB7452A8E67B4000913A9 /* mainViewController */,
 				90363D152A151C9200317D34 /* MapViewController.swift */,
 				90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */,
@@ -375,7 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				901B79342A9399E600D77D94 /* AlertDeleteBuilder.swift in Sources */,
+				901B79342A9399E600D77D94 /* AlertBuilder.swift in Sources */,
 				903BC3A82A52954200D501FD /* CustomButton.swift in Sources */,
 				90B504952A2A259E00C7C5A7 /* NewPlaceViewController+extensions.swift in Sources */,
 				90B504972A2A28E800C7C5A7 /* MapViewController+extensions.swift in Sources */,
