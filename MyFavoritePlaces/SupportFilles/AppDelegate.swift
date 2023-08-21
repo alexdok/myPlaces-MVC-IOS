@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
-        let schemaVersion: UInt64 = 3
+        let schemaVersion: UInt64 = 4
         let config = Realm.Configuration(
             schemaVersion: schemaVersion)
         Realm.Configuration.defaultConfiguration = config
