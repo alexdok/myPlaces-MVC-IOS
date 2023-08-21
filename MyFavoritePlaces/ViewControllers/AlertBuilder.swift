@@ -36,7 +36,6 @@ final class AlertBuilderImpl: AlertDeleteBuilder, AlertImagePickerBuilder, Alert
         
     }
     
-    
     func createImagePickerAlert(imagePickerAction: @escaping (UIImagePickerController.SourceType) -> Void) -> UIAlertController {
         let cameraIcon = #imageLiteral(resourceName: "photo")
         let galleryIcon = #imageLiteral(resourceName: "gallery")
