@@ -36,22 +36,17 @@ extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            delAlertController(indexPath: indexPath)
+            let alertModel = AlertModel(title: "are you shure?", message: "are you shure DELETE this place")
+            let alert = alertBuilder.createAlert(with: alertModel) {
+                self.delPlace(indexPath: indexPath)
+            }
+            present(alert, animated: true)
         }
     }
     
-    private func delAlertController(indexPath: IndexPath) {
-        let confirmeAlertController = UIAlertController(title: nil, message: "are you shure DELETE this place", preferredStyle: .actionSheet)
-        
-        let ok = UIAlertAction(title: "DELETE", style: .destructive) { _ in
-            self.places = self.mainViewModel.delPlace(indexPath: indexPath)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-        
-        let cancel = UIAlertAction(title: "cancel", style: .cancel)
-        confirmeAlertController.addAction(ok)
-        confirmeAlertController.addAction(cancel)
-        present(confirmeAlertController, animated: true)
+    func delPlace(indexPath: IndexPath) {
+        self.places = self.mainViewModel.delPlace(indexPath: indexPath)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 

@@ -6,6 +6,7 @@ final class MainViewController: UIViewController {
     var searchController = UISearchController(searchResultsController: nil)
     var places: [Place] = []
     var mainViewModel = MainViewModel()
+    var alertBuilder = AlertBuilderImpl()
     var ascendingSorting = true
     var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
