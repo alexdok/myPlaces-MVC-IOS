@@ -37,7 +37,7 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alertModel = AlertModel(title: "are you shure?", message: "are you shure DELETE this place")
-            let alert = alertBuilder.createAlert(with: alertModel) {
+            let alert = alertBuilder.createAlertDelete(with: alertModel) {
                 self.delPlace(indexPath: indexPath)
             }
             present(alert, animated: true)

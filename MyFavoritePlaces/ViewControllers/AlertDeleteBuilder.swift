@@ -12,12 +12,17 @@ struct AlertModel {
     var message: String
 }
 
-protocol AlertBuilder {
-    func createAlert(with model: AlertModel, deletePlace: @escaping () -> Void) -> UIAlertController
+protocol AlertDeleteBuilder {
+    func createAlertDelete(with model: AlertModel, deletePlace: @escaping () -> Void) -> UIAlertController
+  //  func createImagePickerAlert(cameraAction: @escaping () -> Void, photoLibraryAction: @escaping () -> Void) -> UIAlertController
 }
 
-final class AlertBuilderImpl: AlertBuilder {
-    func createAlert(with model: AlertModel, deletePlace: @escaping () -> Void) -> UIAlertController {
+final class AlertBuilderImpl: AlertDeleteBuilder {
+//    func createImagePickerAlert(cameraAction: @escaping () -> Void, photoLibraryAction: @escaping () -> Void) -> UIAlertController {
+//        <#code#>
+//    }
+    
+    func createAlertDelete(with model: AlertModel, deletePlace: @escaping () -> Void) -> UIAlertController {
         let alert = UIAlertController(title: model.title, message: model.message, preferredStyle: .alert)
 
         let delete = UIAlertAction(title: "DELETE", style: .default) { _ in
