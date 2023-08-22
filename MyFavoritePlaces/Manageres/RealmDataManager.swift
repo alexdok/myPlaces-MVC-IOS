@@ -22,8 +22,7 @@ class RealmDatamanager {
         places = places.sorted(byKeyPath: keyPath, ascending: ascendingSorting)
     }
     
-    func deletePlace(at indexPath: IndexPath) {
-        let place = places[indexPath.row]
+    func deletePlace(place: Place) {
         StorageManager.delObject(place)
     }
     

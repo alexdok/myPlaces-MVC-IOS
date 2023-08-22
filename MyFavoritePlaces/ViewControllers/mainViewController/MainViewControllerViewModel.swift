@@ -23,8 +23,8 @@ class MainViewModel {
         return data
     }
     
-    func delPlace(indexPath: IndexPath) -> [Place] {
-        data = dataProvider.removePlace(indexPath: indexPath)
+    func delPlace(place: Place) -> [Place] {
+        data = dataProvider.removePlace(place: place)
         return data
     }
     

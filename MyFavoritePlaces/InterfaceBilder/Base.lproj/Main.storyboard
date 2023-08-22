@@ -562,6 +562,11 @@
             <point key="canvasLocation" x="4184.6511627906975" y="-36.051502145922747"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="WyE-7o-ke8">
+            <size key="intrinsicContentSize" width="283" height="55"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="cfv-nC-HaM"/>
         <segue reference="zhF-Mb-kkv"/>

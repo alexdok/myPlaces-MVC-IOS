@@ -26,6 +26,11 @@ final class MainViewController: UIViewController {
         setTableView()
         setSearchController()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchController.searchBar.text = nil
+    }
 
     //MARK: - Navigation
     

@@ -8,7 +8,7 @@ import Foundation
 
 protocol DataProvider {
     func provideCurrentPlaces(metod: Metods, filter: Filters) -> [Place]
-    func removePlace(indexPath: IndexPath) -> [Place]
+    func removePlace(place: Place) -> [Place]
     func filterPlaces(serchText: String) -> [Place]
     func realmDataToPlaces() -> [Place]
 }
@@ -41,9 +41,9 @@ class DataProviderImpl: DataProvider {
         }
     }
     
-    func removePlace(indexPath: IndexPath) -> [Place] {
+    func removePlace(place: Place) -> [Place] {
         var places = [Place]()
-        realmDataManager.deletePlace(at: indexPath)
+        realmDataManager.deletePlace(place: place)
         places = realmDataToPlaces()
         return places
     }

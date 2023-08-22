@@ -45,8 +45,9 @@ extension MainViewController: UITableViewDelegate {
     }
     
     func delPlace(indexPath: IndexPath) {
-        self.places = self.mainViewModel.delPlace(indexPath: indexPath)
+        let place = places.remove(at: indexPath.row)
         self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        self.places = self.mainViewModel.delPlace(place: place)
     }
 }
 
