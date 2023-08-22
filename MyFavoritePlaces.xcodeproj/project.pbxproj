@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9012B7242A94B10E003A5ABD /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012B7232A94B10E003A5ABD /* TimeConverter.swift */; };
 		901B79342A9399E600D77D94 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B79332A9399E600D77D94 /* AlertBuilder.swift */; };
 		90363D162A151C9200317D34 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90363D152A151C9200317D34 /* MapViewController.swift */; };
 		903BC3A82A52954200D501FD /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903BC3A72A52954200D501FD /* CustomButton.swift */; };
@@ -46,6 +47,7 @@
 		713C085354DC5182E6AC8FEE /* Pods-MyFavoritePlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFavoritePlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyFavoritePlaces/Pods-MyFavoritePlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		71D975EFD125E912FDB41F24 /* Pods_MyFavoritePlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFavoritePlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E6F944DCC78ABBBA32C6A3 /* Pods-MyFavoritePlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFavoritePlaces.release.xcconfig"; path = "Target Support Files/Pods-MyFavoritePlaces/Pods-MyFavoritePlaces.release.xcconfig"; sourceTree = "<group>"; };
+		9012B7232A94B10E003A5ABD /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		901B79332A9399E600D77D94 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		90363D152A151C9200317D34 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = MyFavoritePlaces/ViewControllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		903BC3A72A52954200D501FD /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -157,7 +159,6 @@
 		90A302092A2F63DE00E12CA9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				901B79332A9399E600D77D94 /* AlertBuilder.swift */,
 				90DDB7452A8E67B4000913A9 /* mainViewController */,
 				90363D152A151C9200317D34 /* MapViewController.swift */,
 				90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */,
@@ -180,6 +181,7 @@
 				90C2E66D2A8B5F06005F5657 /* RealmDataManager.swift */,
 				90CA04EB29B1F52E00A96762 /* StorageManager.swift */,
 				90B504982A2A2C8800C7C5A7 /* MapManager.swift */,
+				9012B7232A94B10E003A5ABD /* TimeConverter.swift */,
 			);
 			path = Manageres;
 			sourceTree = "<group>";
@@ -191,6 +193,7 @@
 				9099C313299F888800863677 /* Assets.xcassets */,
 				9099C30C299F888700863677 /* SceneDelegate.swift */,
 				9099C30A299F888700863677 /* AppDelegate.swift */,
+				901B79332A9399E600D77D94 /* AlertBuilder.swift */,
 			);
 			path = SupportFilles;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				90B504932A2A248500C7C5A7 /* MainViewController+extensions.swift in Sources */,
 				90CF2F612A8A5CA50085C980 /* MainViewControllerViewModel.swift in Sources */,
 				90B504992A2A2C8800C7C5A7 /* MapManager.swift in Sources */,
+				9012B7242A94B10E003A5ABD /* TimeConverter.swift in Sources */,
 				90C2E6722A8B679C005F5657 /* DataProvider.swift in Sources */,
 				9099C30D299F888700863677 /* SceneDelegate.swift in Sources */,
 				9099C31F299F92BB00863677 /* PlacesTableViewCell.swift in Sources */,
