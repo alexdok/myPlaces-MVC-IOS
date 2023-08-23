@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapManager {
+final class MapManager {
     
     let alertBuilder = AlertBuilderImpl()
     let locationManager = CLLocationManager()
@@ -91,7 +91,7 @@ class MapManager {
         }
     }
     
-    func getDirections(mapView: MKMapView, previousLocation: (CLLocation) -> ()) {
+    func getDirections(mapView: MKMapView, previousLocation: (CLLocation) -> Void) {
         guard let location = locationManager.location?.coordinate else {
             let alertModel = AlertModel(title: "Error", message: "Current location is not found")
             alertBuilder.showInfoAlert(with: alertModel)
@@ -106,6 +106,10 @@ class MapManager {
         previousLocation(CLLocation(latitude: location.latitude, longitude: location.longitude))
         let directions = MKDirections(request: request)
         resetMapView(withNew: directions, mapView: mapView)
+        directionsCalculate(directions: directions, mapView: mapView)
+    }
+    
+    private func directionsCalculate(directions: MKDirections, mapView: MKMapView) {
         directions.calculate { (response, error) in
             if let error = error {
                 print(error)
@@ -116,26 +120,24 @@ class MapManager {
                 self.alertBuilder.showInfoAlert(with: alertModel)
                 return
             }
-            for route in response.routes {
-                mapView.addOverlay(route.polyline)
-                mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-                let distance = String(format: "%.1f", route.distance / 1000)
-                let timeInterval = route.expectedTravelTime
-                self.textPath = "distance: \(distance) km"
-                let time = self.convertSecondsToHMS(seconds: Int(timeInterval))
-                self.textTime = "travel time: \(time)"
-                print("расстояние \(distance) km")
-                print("время в пути \(timeInterval) sec")
-            }
+            self.showRoutesAndInfoOnMap(routes: response.routes, mapView: mapView)
         }
     }
     
-   private func convertSecondsToHMS(seconds: Int) -> String {
-        let hours = seconds / 3600
-        let minutes = (seconds % 3600) / 60
-        let seconds = (seconds % 3600) % 60
-        return String(format: "%2dh %2dm %2ds", hours, minutes, seconds)
+    private func showRoutesAndInfoOnMap(routes: [MKRoute], mapView: MKMapView) {
+        for route in routes {
+            mapView.addOverlay(route.polyline)
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            let distance = String(format: "%.1f", route.distance / 1000)
+            let timeInterval = route.expectedTravelTime
+            textPath = "distance: \(distance) km"
+            let time = TimeConverter.shared.convertSecondsToHMS(seconds: Int(timeInterval))
+            textTime = "travel time: \(time)"
+            print("расстояние \(distance) km")
+            print("время в пути \(timeInterval) sec")
+        }
     }
+    
     
     func createDiractionsRequest(coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
         guard let destinationCoordinate = placeCoordinate else { return nil }

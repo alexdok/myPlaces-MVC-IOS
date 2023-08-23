@@ -7,7 +7,11 @@
 
 import Foundation
 
-class TimeConverter {
+final class TimeConverter {
+    
+    static let shared = TimeConverter()
+    
+    private init() {}
 
     func convertSecondsToHMS(seconds: Int) -> String {
          let hours = seconds / 3600

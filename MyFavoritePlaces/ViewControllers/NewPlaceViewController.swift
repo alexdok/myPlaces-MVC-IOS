@@ -13,7 +13,7 @@ enum Segues: String {
     case showUserLocation = "showUserLocation"
 }
 
-class NewPlaceViewController: UITableViewController {
+final class NewPlaceViewController: UITableViewController {
     
     let alertBuilder = AlertBuilderImpl()
     var imageIsChanged = false

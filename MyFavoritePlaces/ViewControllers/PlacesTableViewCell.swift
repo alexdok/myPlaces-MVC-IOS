@@ -8,7 +8,7 @@
 import UIKit
 import Cosmos
 
-class PlacesTableViewCell: UITableViewCell {
+final class PlacesTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var location: UILabel! 
     @IBOutlet weak var type: UILabel!

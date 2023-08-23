@@ -7,7 +7,7 @@
 
 import RealmSwift
 
-class RealmDatamanager {
+final class RealmDatamanager {
     private let realm = try! Realm()
     
     var places: Results<Place>!
