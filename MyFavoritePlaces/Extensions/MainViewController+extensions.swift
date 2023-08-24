@@ -15,8 +15,13 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PlacesTableViewCell else { return UITableViewCell()}
         let place = places[indexPath.row]
+        let cell = cellPreparer(place: place)
+        return cell
+    }
+    
+    private func cellPreparer(place: Place) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PlacesTableViewCell else { return UITableViewCell()}
         cell.name.text = place.name
         cell.location.text = place.location
         cell.type.text = place.type
