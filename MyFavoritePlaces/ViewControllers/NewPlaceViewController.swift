@@ -19,6 +19,7 @@ final class NewPlaceViewController: UITableViewController {
     var imageIsChanged = false
     var currentPlace: Place?
     var currentRating = 0.0
+   
 //    let picker = UIDatePicker()
     
     @IBOutlet weak var cosmosRatingView: CosmosView!
@@ -33,9 +34,9 @@ final class NewPlaceViewController: UITableViewController {
         super.viewDidLoad()
         saveButton.isEnabled = false
         setupEditScreen()
-        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         setCosmosView()
         mapButton.dropShadow()
+        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     //MARK: navigation

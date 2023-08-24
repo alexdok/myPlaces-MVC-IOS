@@ -24,6 +24,9 @@ extension MainViewController: UITableViewDataSource {
             cell.imageOfPlace.image = UIImage(data: data)
         }
         cell.cosmosView.rating = place.rating
+        if place.rating < 2 {
+            cell.backgroundColor = .systemPink
+        }
         return cell
     }
 }
