@@ -25,6 +25,11 @@ final class PlacesTableViewCell: UITableViewCell {
         setConfigCosmosview()
     }
     
+    override func prepareForReuse() {
+           super.prepareForReuse()
+        backgroundColor = .white
+       }
+    
    private func setCosmosView() {
         contentView.addSubview(cosmosView)
         cosmosView.translatesAutoresizingMaskIntoConstraints = false

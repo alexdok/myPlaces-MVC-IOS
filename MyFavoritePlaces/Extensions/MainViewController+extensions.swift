@@ -20,6 +20,8 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
     
+    
+    
     private func cellPreparer(place: Place) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? PlacesTableViewCell else { return UITableViewCell()}
         cell.name.text = place.name
