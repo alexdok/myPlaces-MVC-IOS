@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class MainViewModel {
 
     let dataProvider = DataProviderImpl()

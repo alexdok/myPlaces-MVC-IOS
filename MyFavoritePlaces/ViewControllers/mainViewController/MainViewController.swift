@@ -1,5 +1,4 @@
 import UIKit
-import RealmSwift
 
 final class MainViewController: UIViewController {
     
