@@ -113,6 +113,15 @@
 			path = MyFavoritePlacesTests;
 			sourceTree = "<group>";
 		};
+		904F464B2AA6203900FB6F69 /* newPlaceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */,
+				906ADBB22A95ED0200FE90A1 /* NewPlaceViewModel.swift */,
+			);
+			path = newPlaceViewController;
+			sourceTree = "<group>";
+		};
 		906ADBB42A95F20F00FE90A1 /* mapViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,8 +181,7 @@
 			children = (
 				90DDB7452A8E67B4000913A9 /* mainViewController */,
 				906ADBB42A95F20F00FE90A1 /* mapViewController */,
-				90561F7F29A4A3A200E0D69E /* NewPlaceViewController.swift */,
-				906ADBB22A95ED0200FE90A1 /* NewPlaceViewModel.swift */,
+				904F464B2AA6203900FB6F69 /* newPlaceViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

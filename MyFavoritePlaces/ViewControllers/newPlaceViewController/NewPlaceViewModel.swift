@@ -10,5 +10,6 @@ import UIKit
 
 
 class NewPlaceViewModel {
+    // доделать
     
 }

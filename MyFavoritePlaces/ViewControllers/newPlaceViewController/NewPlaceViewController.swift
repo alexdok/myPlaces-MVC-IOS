@@ -19,8 +19,6 @@ final class NewPlaceViewController: UITableViewController {
     var imageIsChanged = false
     var currentPlace: Place?
     var currentRating = 0.0
-   
-//    let picker = UIDatePicker()
     
     @IBOutlet weak var cosmosRatingView: CosmosView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
