@@ -67,8 +67,5 @@ class MapManagerTests: XCTestCase {
         XCTAssertEqual(mapView.region.center.latitude, expectedLatitude, accuracy: 1, "Map view region center latitude should match expected region center latitude")
         XCTAssertEqual(mapView.region.center.longitude, expectedLongitude, accuracy: 1, "Map view region center longitude should match expected region center longitude")
     }
-
-    
-    // Add more tests for the remaining methods
     
 }
