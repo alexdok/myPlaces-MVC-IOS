@@ -5,6 +5,6 @@ target 'MyFavoritePlaces' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'RealmSwift', '~>10'
+  pod 'RealmSwift', '~>10.42'
   pod 'Cosmos', '~> 23.0'
 end
